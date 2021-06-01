@@ -7,7 +7,8 @@ export default {
   component:Button,
   args:{
     children:'Button' // can set args globally
-  }
+  },
+  decorators:[story => <Center>{story()}</Center>]
 }
 
 // export each button 
