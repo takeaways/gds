@@ -5,10 +5,14 @@ import Center from "../Center/Center"
 export default {
   title: 'Form/Button', //left side panel
   component:Button,
-  args:{
-    children:'Button' // can set args globally
-  },
-  decorators:[story => <Center>{story()}</Center>]
+  decorators:[story => <Center>{story()}</Center>],
+  argTypes: {
+    variant: {
+      options: ['primary', 'secondary'],
+      control: { type: 'radio' },
+    },
+    onClick: { action:'clicked'}
+  }
 }
 
 // export each button 
@@ -21,17 +25,21 @@ const Template = args => <Button {...args}/>
 export const PrimaryA = Template.bind({})
 PrimaryA.args = {
   variant:'primary',
-  // children:'Primary Args'
+  children:'Primary Args'
 }
 
 export const LongPrimaryA = Template.bind({})
 LongPrimaryA.args = {
   ...PrimaryA.args,
-  // children:'Long Primary A'
+  children:'Long Primary A'
 }
 
 export const SecondaryA = Template.bind({})
 SecondaryA.args = {
   variant:'secondary',
-  // children:'Secondary Args'
+  children:'Secondary Args'
 }
+
+export const Log = ()=> (
+  <Button onClick={()=>{console.log("clicked")}}>Log</Button>
+)
