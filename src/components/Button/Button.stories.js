@@ -3,7 +3,10 @@ import Button from "./Button";
 
 export default {
   title: 'Form/Button', //left side panel
-  component:Button
+  component:Button,
+  args:{
+    children:'Button' // can set args globally
+  }
 }
 
 // export each button 
@@ -16,17 +19,17 @@ const Template = args => <Button {...args}/>
 export const PrimaryA = Template.bind({})
 PrimaryA.args = {
   variant:'primary',
-  children:'Primary Args'
+  // children:'Primary Args'
 }
 
 export const LongPrimaryA = Template.bind({})
 LongPrimaryA.args = {
   ...PrimaryA.args,
-  children:'Long Primary A'
+  // children:'Long Primary A'
 }
 
 export const SecondaryA = Template.bind({})
 SecondaryA.args = {
   variant:'secondary',
-  children:'Secondary Args'
+  // children:'Secondary Args'
 }
