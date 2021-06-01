@@ -1,9 +1,10 @@
 import React from "react"
 import Input from "./Input"
 
+
 export default {
   title: 'Form/Input',
-  component:Input
+  component:Input,
 }
 
 export const Small = () => <Input placeholder={`Small size`} size={'small'}/>
