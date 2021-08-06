@@ -17,3 +17,7 @@ after_success:
   - docker build -t geonil/docker-nginx ./nginx
 
   - echo "$DOCKER_HUB_PASSWORD" | docker login -u "$DOCKER_HUB_ID" --password-stdin
+
+  - docker push geonil/docker-frontend
+  - docker push geonil/docker-backend
+  - docker push geonil/docker-nginx
