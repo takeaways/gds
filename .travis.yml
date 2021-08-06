@@ -21,3 +21,15 @@ after_success:
   - docker push geonil/docker-frontend
   - docker push geonil/docker-backend
   - docker push geonil/docker-nginx
+
+deploy:
+  provider: elasticbeanstalk
+  region: "ap-northeast-2"
+  app: "docker-fullstack"
+  env: "Dockerfullstack-env"
+  bucket_name: "elasticbeanstalk-ap-northeast-2-910991389248"
+  bucket_path: "docker-fullstac"
+  on:
+    branch: main
+access_key_id: $AWS_ACCESS_KEY
+secret_access_key: $AWS_SECRET_ACCESS_KEY
