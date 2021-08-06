@@ -29,7 +29,7 @@ function App() {
         value={value}
         onChange={(e) => setValue(e.target.value)}
       />
-      <button onClick={createData}>godd</button>
+      <button onClick={createData}>gosdd</button>
       {list.map((item) => (
         <div key={item.id}>{item.value}</div>
       ))}
